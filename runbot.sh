@@ -1,6 +1,1 @@
-#!/bin/bash nohup bash runbot.sh > /dev/null 2>&1 &
-while true
-do
-  python3 main.py
-  sleep 0.1
-done
+echo -e '#!/bin/bash\nwhile true\ndo\n  python3 main.py || echo "Bot crashed or exited, restarting..."\n  sleep 1\ndone' > runbot.sh && chmod +x runbot.sh
